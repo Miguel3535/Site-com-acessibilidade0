@@ -165,6 +165,8 @@ h2 {
     display: none;
 }
 
+/* --- ESTILOS DE ALTO CONTRASTE (EXISTENTES E CORRIGIDOS) --- */
+
 .alto-contraste{
     background-color: var(--alto-contraste-fundo);
     color: var(--alto-contraste-texto);
@@ -197,4 +199,34 @@ h2 {
 }
 .alto-contraste .fundo-galeria {
     background: none;
+}
+
+/* --- CORREÇÕES PARA VISIBILIDADE DE TEXTO (NOVAS REGRAS) --- */
+
+/* 1. Títulos, Parágrafos e Labels: Força cor clara (branca) */
+.alto-contraste h1,
+.alto-contraste h2,
+.alto-contraste h3,
+.alto-contraste p,
+.alto-contraste label {
+    color: var(--alto-contraste-texto) !important;
+    background-color: transparent !important;
+}
+
+/* 2. Destaque para Títulos (h2): Força cor amarela */
+.alto-contraste h2 {
+    color: var(--alto-contraste-link) !important; 
+}
+
+/* 3. Título Principal (display-4): Remove sombra para evitar conflito */
+.alto-contraste .display-4 {
+    color: var(--alto-contraste-texto) !important;
+    text-shadow: none !important; 
+}
+
+/* 4. Inputs de Formulário: Inverte cores para fundo claro e texto escuro no input */
+.alto-contraste .form-control {
+    background-color: var(--alto-contraste-texto) !important; /* Fundo do campo branco */
+    color: var(--alto-contraste-fundo) !important; /* Texto digitado preto */
+    border: 2px solid var(--alto-contraste-link) !important; /* Borda de destaque amarela */
 }
