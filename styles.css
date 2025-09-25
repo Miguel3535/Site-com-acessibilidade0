@@ -32,16 +32,17 @@ section {
     /* aula 3 */
     background-image: url('img/fundo\ top.png');
     /* Substitua pelo caminho da sua imagem */
-    background-size: cover;
+    /* CORREÇÃO AQUI: background-size cover garante que preencha, e padding garante a altura mínima */
+    background-size: cover; 
     background-position: right;
     border-radius: 80px;
     width: 100%;
-    height: 606px;
-    padding: 40px;
+    /* Removendo height: 606px; para que se ajuste ao conteúdo */
+    padding: 60px 40px; /* Aumentei o padding para dar altura */
     margin: 0 auto;
 }
 
-/* posicionamento para a imagem à direita */
+/* Regra original removida, pois não é necessária e causava posicionamento incorreto
 .img-inicio {
     position: absolute;
     right: 0;
@@ -49,6 +50,7 @@ section {
     width: 45rem;
     height: auto;
 }
+*/
 
 
 .esquerda-conteudo {
@@ -70,11 +72,12 @@ section {
 }
 
 .display-4 {
+    color: white; /* Garante que o texto seja branco */
     text-shadow: -5px 5px var(--laranja-claro);
 }
 
 
-#tropicalia {
+#imagine-dragons {
     position: relative;
     padding-top: 5rem;
     margin-top: 3rem;
@@ -84,8 +87,13 @@ section {
     background-size: 180px 180px;
     /* Ajuste o tamanho conforme necessário */
 }
+/* AJUSTE: Garante que a imagem da guitarra seja responsiva */
+#imagine-dragons .container .col-4 img {
+    max-width: 100%;
+    height: auto;
+}
 
-#tropicalia .container {
+#imagine-dragons .container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,7 +173,7 @@ h2 {
     display: none;
 }
 
-/* --- ESTILOS DE ALTO CONTRASTE (EXISTENTES E CORRIGIDOS) --- */
+/* --- ESTILOS DE ALTO CONTRASTE --- */
 
 .alto-contraste{
     background-color: var(--alto-contraste-fundo);
@@ -190,7 +198,7 @@ h2 {
     color: var(--alto-contraste-fundo)
 }
 
-.alto-contraste #tropicalia {
+.alto-contraste #imagine-dragons {
     background: none;
 }
 
@@ -201,7 +209,7 @@ h2 {
     background: none;
 }
 
-/* --- CORREÇÕES PARA VISIBILIDADE DE TEXTO (NOVAS REGRAS) --- */
+/* --- CORREÇÕES PARA VISIBILIDADE DE TEXTO --- */
 
 /* 1. Títulos, Parágrafos e Labels: Força cor clara (branca) */
 .alto-contraste h1,
